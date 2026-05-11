@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Chat OpenAI Helper",
+  "version": "1.0.0",
+  "description": "A basic Chrome extension scaffold for chat.openai.com.",
+  "permissions": [],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://*.chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://grok.com/*",
+    "https://*.grok.com/*",
+    "https://perplexity.ai/*",
+    "https://copilot.microsoft.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://*.chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://grok.com/*",
+        "https://*.grok.com/*",
+        "https://perplexity.ai/*",
+        "https://copilot.microsoft.com/*"
+      ],
+      "js": [
+        "jspdf.min.js",
+        "config.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
